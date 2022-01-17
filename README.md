@@ -15,6 +15,10 @@
 <img src="https://img.shields.io/github/v/release/KarolosLykos/cli-template?style=flat-square" alt="Latest Release">
 </a>
 
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template">
+<img src="https://codecov.io/gh/KarolosLykos/cli-template/branch/main/graph/badge.svg?token=S5ZCIV09VH" alt="Latest Release">
+</a>
+
 <br />
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
@@ -46,8 +50,6 @@
 </p>
 
 <br/>
-
-</p>
 
 ----
 
