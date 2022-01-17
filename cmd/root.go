@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"os/signal"
 
+	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 )
 
@@ -25,7 +25,7 @@ func Execute() {
 
 	go func() {
 		<-c
-		fmt.Println("exiting....")
+		pterm.Print("exiting....")
 		os.Exit(0)
 	}()
 
