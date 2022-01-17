@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/github/v/release/KarolosLykos/cli-template?style=flat-square" alt="Latest Release">
 </a>
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/test/releases">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
 <img src="https://img.shields.io/github/downloads/KarolosLykos/cli-template/total.svg?style=flat-square" alt="Downloads">
 </a>
 
@@ -40,9 +40,9 @@
 ----
 
 <p align="center">
-<strong><a href="https://KarolosLykos.github.io/test/#/docs">Documentation</a></strong>
+<strong><a href="https://KarolosLykos.github.io/cli-template/#/docs">Documentation</a></strong>
 |
-<strong><a href="https://KarolosLykos.github.io/test/#/CONTRIBUTING">Contributing</a></strong>
+<strong><a href="https://KarolosLykos.github.io/cli-template/#/CONTRIBUTING">Contributing</a></strong>
 </p>
 
 ----
