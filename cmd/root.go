@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// dateCmd command to print the date.
 var rootCmd = &cobra.Command{
 	Use:     "cli-template",
 	Short:   "This cli template shows nothing",
@@ -16,6 +17,8 @@ var rootCmd = &cobra.Command{
 	Version: "v0.0.1", // <--VERSION-->
 }
 
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
