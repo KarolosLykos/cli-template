@@ -12,7 +12,7 @@ var DateCmd = &cobra.Command{
 	Short: "Print the current date.",
 	Run: func(cmd *cobra.Command, args []string) {
 		format, _ := cmd.Flags().GetString("format")
-		fmt.Fprintf(cmd.OutOrStdout(), time.Now().Format(format))
+		fmt.Fprint(cmd.OutOrStdout(), time.Now().Format(format))
 	},
 }
 
