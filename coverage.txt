@@ -1,0 +1,4 @@
+mode: atomic
+github.com/KarolosLykos/cli-template/cmd/date.go:13.47,16.3 2 1
+github.com/KarolosLykos/cli-template/cmd/date.go:19.13,23.2 2 1
+github.com/KarolosLykos/cli-template/cmd/root.go:18.22,20.2 1 0
