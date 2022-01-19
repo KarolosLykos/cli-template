@@ -19,10 +19,6 @@
 <img src="https://img.shields.io/codecov/c/gh/KarolosLykos/cli-template?color=magenta&logo=codecov&style=flat-square" alt="Downloads">
 </a>
 
-<a href="https://codecov.io/gh/KarolosLykos/cli-template" style="text-decoration: none">
-<!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-28740-magenta?style=flat-square" alt="Forks"><!-- unittestcount:end -->
-</a>
-
 <br />
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
