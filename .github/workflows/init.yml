@@ -1,6 +1,6 @@
 name: Initialize
 
-on: [create]
+on: [push]
 
 jobs:
   init:
@@ -19,8 +19,9 @@ jobs:
           go get
           go mod tidy
           go run ./setup/main.go
-          rm -fr ./github/workflows/init.yml
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: initial setup
+        run: |
+          git config --global user.name YOUR_NAME
+          git config --global user.email YOUR_EMAIL
+          git commit -am "Automated report"
+          git push
