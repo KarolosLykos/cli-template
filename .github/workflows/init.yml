@@ -19,9 +19,6 @@ jobs:
           go get
           go mod tidy
           go run ./setup/main.go
-      - name: Create Pull Request
-        run: |
-          git config --global user.name YOUR_NAME
-          git config --global user.email YOUR_EMAIL
-          git commit -am "Automated report"
-          git push
+          rm ./.github/workflows/init.yml
+      - name: Commit changes
+      - uses: stefanzweifel/git-auto-commit-action@v4

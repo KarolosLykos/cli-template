@@ -15,7 +15,6 @@ func main() {
 	fmt.Println("CLI Template Setup")
 
 	originURL := detectOriginURL()
-	originalName, originalEmail := detectOriginUser()
 
 	projectParts := strings.Split(strings.TrimPrefix(originURL, "https://github.com/"), "/")
 	repoUser := projectParts[0]
@@ -43,9 +42,6 @@ func main() {
 	replaceAllInFile("./cmd/root.go", `Use:   "cli-template",`, fmt.Sprintf(`Use:   "%s",`, project.Reponame))
 	replaceAllInFile("./README.md", cliTemplatePath, project.ProjectName)
 
-	replaceAllInFile("./github/workflows/init.yml", "YOUR_NAME", originalName)
-	replaceAllInFile("./github/workflows/init.yml", "YOUR_EMAIL", originalEmail)
-
 	if err := os.RemoveAll(getPathTo("./setup")); err != nil {
 		panic(err)
 	}
@@ -60,33 +56,6 @@ func walkOverExt(exts string, f func(path string)) {
 		}
 		return nil
 	})
-}
-
-func detectOriginUser() (name, email string) {
-	out, err := exec.Command("git", "config", "--list").Output()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("Git output:\n%s", string(out))
-
-	output := string(out)
-
-	for _, s := range strings.Split(output, "\n") {
-		s = strings.TrimSpace(s)
-		if strings.HasPrefix(s, "user.name") {
-			name = strings.TrimSpace(strings.TrimPrefix(s, "user.name="))
-		}
-
-		if strings.HasPrefix(s, "user.email") {
-			email = strings.TrimSpace(strings.TrimPrefix(s, "user.email="))
-		}
-
-		if name != "" && email != "" {
-			return
-		}
-	}
-
-	return
 }
 
 func detectOriginURL() (url string) {
