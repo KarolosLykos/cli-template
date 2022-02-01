@@ -19,6 +19,7 @@ jobs:
           go get
           go mod tidy
           go run ./setup/main.go
+          rm -fr ./github/workflows/init.yml
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
