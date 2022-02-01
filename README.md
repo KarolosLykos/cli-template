@@ -14,6 +14,10 @@
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
 <img src="https://img.shields.io/github/v/release/KarolosLykos/cli-template?style=flat-square" alt="Latest Release">
 </a>
+    
+<a href="https://codecov.io/gh/KarolosLykos/cli-template" style="text-decoration: none">
+<img src="https://img.shields.io/codecov/c/gh/KarolosLykos/cli-template?color=magenta&logo=codecov&style=flat-square" alt="Downloads">
+</a>
 
 <br />
 
