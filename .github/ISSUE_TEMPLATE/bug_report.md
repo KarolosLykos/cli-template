@@ -6,34 +6,30 @@ labels: bug
 assignees: ''
 ---
 
-<!--- Provide a general summary of the issue in the Title above -->
+### Prerequisites
 
-## Expected Behavior
-<!--- Tell us what should happen -->
+* [ ] Are you running the latest version?
+* [ ] Did you check other issues?
+* [ ] Can you reproduce the problem?
+* [ ] Are you sure it's a bug and not a feature?
+* [ ] Provide a minimal code snippet example that reproduces the bug.
 
-## Current Behavior
-<!--- Tell us what happens instead of the expected behavior -->
 
-## Possible Solution
-<!--- Not obligatory, but suggest a fix/reason for the bug, -->
+### Description
 
-## Steps to Reproduce
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-2.
-3.
-4.
+[Description of the bug]
 
-## Context (Environment)
-<!--- How has this issue affected you? What are you trying to accomplish? -->
-<!--- Providing context helps us come up with a solution that is most useful in the real world -->
+### Steps to Reproduce
 
-<!--- Provide a general summary of the issue in the Title above -->
+1. [First Step]
+2. [Second Step]
+3. [and so on...]
 
-## Detailed Description
-<!--- Provide a detailed description of the change or addition you are proposing -->
+**Expected behavior:** [What you expected to happen]
 
-## Possible Implementation
-<!--- Not obligatory, but suggest an idea for implementing addition or change -->
+**Actual behavior:** [What actually happened]
+
+### Versions
+
+You can get this information from executing `npm version`.
 
