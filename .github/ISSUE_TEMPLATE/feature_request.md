@@ -6,6 +6,9 @@ labels: proposal
 assignees: ''
 ---
 
+Your issue may already be reported!
+Please search on the [issue tracker](../) before creating one.
+
 ## Feature Request
 
 ### Description
