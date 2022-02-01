@@ -1,11 +1,11 @@
 ---
 name: Feature request
 about: "Suggest an idea for this project"
-title: ''
+title: '[Proposal]: '
 labels: proposal
 assignees: ''
-
 ---
+
 ## Feature Request
 
 ### Description
