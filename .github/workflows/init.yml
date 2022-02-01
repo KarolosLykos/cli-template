@@ -1,6 +1,6 @@
 name: Initialize
 
-on: [push]
+on: [create]
 
 jobs:
   init:
@@ -21,4 +21,4 @@ jobs:
           go run ./setup/main.go
           rm ./.github/workflows/init.yml
       - name: Commit changes
-      - uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v4
