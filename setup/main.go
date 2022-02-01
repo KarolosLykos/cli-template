@@ -49,7 +49,6 @@ func main() {
 
 func walkOverExt(exts string, f func(path string)) {
 	_ = filepath.Walk(getPathTo(""), func(path string, info fs.FileInfo, err error) error {
-
 		for _, ext := range strings.Split(exts, ",") {
 			if filepath.Ext(path) == "."+ext {
 				f(path)
@@ -69,7 +68,7 @@ func detectOriginURL() (url string) {
 	output := string(out)
 
 	for _, s := range strings.Split(output, "\n") {
-		s = strings.TrimSpace(strings.TrimLeft(s, "origin"))
+		s = strings.TrimSpace(strings.TrimPrefix(s, "origin"))
 		if strings.HasPrefix(s, "https://github.com/") && strings.Contains(s, "push") {
 			url = strings.TrimSpace(strings.TrimRight(s, "(push)"))
 
@@ -91,11 +90,15 @@ func replaceAllInFile(filepath, search, replace string) {
 	if err != nil {
 		panic(err)
 	}
-	content := string(fileBytes)
 
+	content := string(fileBytes)
 	content = strings.ReplaceAll(content, search, replace)
 
-	if err = ioutil.WriteFile(filepath, []byte(content), 0600); err != nil {
+	if err := ioutil.WriteFile(
+		filepath,
+		[]byte(content),
+		fs.ModePerm,
+	); err != nil {
 		panic(err)
 	}
 }
