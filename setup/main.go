@@ -41,6 +41,7 @@ func main() {
 
 	replaceAllInFile("./cmd/root.go", `Use:   "cli-template",`, fmt.Sprintf(`Use:   "%s",`, project.Reponame))
 	replaceAllInFile("./README.md", cliTemplatePath, project.ProjectName)
+	replaceAllInFile("./.golangci.yml", cliTemplatePath, project.ProjectName)
 
 	if err := os.RemoveAll(getPathTo("./setup")); err != nil {
 		panic(err)
