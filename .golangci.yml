@@ -1,3 +1,6 @@
+run:
+  tests: false
+
 linters-settings:
   goimports:
     local-prefixes: github.com/KarolosLykos/cli-template
