@@ -26,5 +26,5 @@ func TestVersionCommand(t *testing.T) {
 	out, err := ioutil.ReadAll(b)
 	require.NoError(t, err)
 
-	assert.Equal(t, fmt.Sprintln(command.Version), string(out))
+	assert.Equal(t, fmt.Sprintln("v0.0.3"), string(out))
 }
