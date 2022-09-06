@@ -13,7 +13,6 @@ import (
 )
 
 func TestVersionCommand(t *testing.T) {
-	version := "v0.0.1"
 	command := cmd.NewRootCmd()
 
 	b := bytes.NewBufferString("")
@@ -27,5 +26,5 @@ func TestVersionCommand(t *testing.T) {
 	out, err := ioutil.ReadAll(b)
 	require.NoError(t, err)
 
-	assert.Equal(t, fmt.Sprintln(version), string(out))
+	assert.Equal(t, fmt.Sprintln(command.Version), string(out))
 }
