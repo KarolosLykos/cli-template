@@ -2,13 +2,13 @@ name: golangci-lint
 on: [ push, pull_request ]
 jobs:
   golangci:
-    strategy:
-      matrix:
-        go-version: [1.17.x]
     name: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.17' # The Go version to download (if necessary) and use.
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3.3.1
         with:
