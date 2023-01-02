@@ -4,7 +4,7 @@
 <p align="center">
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/actions?query=workflow%3AGo+branch%3Amain">
-<img src="https://img.shields.io/github/workflow/status/KarolosLykos/cli-template/Go?style=flat-square" alt="Build Status">
+<img src="https://img.shields.io/github/actions/workflow/status/KarolosLykos/cli-template/go.yml?style=flat-square" alt="Build Status">
 </a>
 
 <a style="text-decoration: none" href="go.mod">
