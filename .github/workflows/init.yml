@@ -2,9 +2,10 @@ name: Initialize
 
 on: push
 
+permissions: read-all|write-all
+
 jobs:
   init:
-    permissions: read-all|write-all
     if: github.run_number == 1
     runs-on: ubuntu-latest
     steps:
