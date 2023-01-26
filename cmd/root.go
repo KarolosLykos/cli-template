@@ -12,7 +12,7 @@ func NewRootCmd() *cobra.Command {
 		Short:   "This cli template shows nothing",
 		Long:    `This is a template CLI application, which can be used as a boilerplate for awesome CLI tools written in Go.`,
 		Example: `cli-template`,
-		Version: "v0.0.3", // <--VERSION-->
+		Version: "v0.0.4", // <--VERSION-->
 		RunE: func(cmd *cobra.Command, args []string) error {
 			fmt.Println(cmd.UsageString())
 
