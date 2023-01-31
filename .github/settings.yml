@@ -4,7 +4,7 @@ repository:
     description: 💻 Template for quickly spawning new go cli application with the basic CI pipelines.
     homepage: https://github.com/KarolosLykos/stack
     topics: go, golang, template, cli, cobra, viper
-    private: true
+    private: false
     
 branches:
   - name: main
