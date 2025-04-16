@@ -33,6 +33,12 @@ linters:
     - unused
     - whitespace
   settings:
+    depguard:
+      rules:
+        main:
+          list-mode: lax
+          allow:
+            - "github.com/spf13/cobra"
     gocyclo:
       min-complexity: 15
     misspell:
