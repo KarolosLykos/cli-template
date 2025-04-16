@@ -1,82 +1,83 @@
+version: "2"
 run:
   tests: false
-
-linters-settings:
-  goimports:
-    local-prefixes: github.com/KarolosLykos/cli-template
-  gocyclo:
-    min-complexity: 15
-  govet:
-    check-shadowing: true
-  stylecheck:
-    checks: ["all", "-ST1006"]
-  misspell:
-    locale: US,UK
-  nolintlint:
-    allow-leading-space: false # require machine-readable nolint directives (with no leading space)
-    allow-unused: false # report any unused nolint directives
-    require-explanation: true # require an explanation for nolint directives
-    require-specific: false # don't require nolint directives to be specific about which linter is being skipped
-
 linters:
-  # please, do not use `enable-all`: it's deprecated and will be removed soon.
-  # inverted configuration with `enable-all` and `disable` is not scalable during updates of golangci-lint
-  disable-all: true
+  default: none
   enable:
-    - deadcode
-    - errcheck
-    - gosimple
-    - govet
-    - ineffassign
-    - staticcheck
-    - structcheck
-    - typecheck
-    - unused
-    - varcheck
     - bodyclose
     - depguard
     - dupl
-    - exportloopref
+    - errcheck
     - forcetypeassert
     - funlen
-    - gci
     - gocognit
     - goconst
     - gocritic
     - gocyclo
     - godot
-    - gofumpt
-    - gomnd
     - goprintffuncname
     - gosec
-    - ifshort
+    - govet
+    - ineffassign
     - misspell
+    - mnd
     - noctx
     - nolintlint
     - rowserrcheck
     - sqlclosecheck
-    - stylecheck
+    - staticcheck
     - thelper
     - tparallel
     - unconvert
     - unparam
+    - unused
     - whitespace
-    # - errorlint
-    # - goerr113
-    # - wrapcheck
-issues:
-  # Excluding configuration per-path, per-linter, per-text and per-source
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - gocyclo
-        - errcheck
-        - dupl
-        - gosec
-        - gocritic
-    - linters:
-        - gocritic
-      text: "unnecessaryDefer:"
-
-service:
-  golangci-lint-version: 1.43.x # use the fixed version to not introduce new linters unexpectedly
+  settings:
+    gocyclo:
+      min-complexity: 15
+    misspell:
+      locale: US
+    nolintlint:
+      require-explanation: true
+      require-specific: false
+      allow-unused: false
+    staticcheck:
+      checks:
+        - -ST1006
+        - all
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - dupl
+          - errcheck
+          - gocritic
+          - gocyclo
+          - gosec
+        path: _test\.go
+      - linters:
+          - gocritic
+        text: 'unnecessaryDefer:'
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofumpt
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/KarolosLykos/cli-template
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
