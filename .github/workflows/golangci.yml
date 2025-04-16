@@ -10,4 +10,4 @@ jobs:
         with:
           go-version: '1.17' # The Go version to download (if necessary) and use.
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6.5.1
+        uses: golangci/golangci-lint-action@v7.0.0
