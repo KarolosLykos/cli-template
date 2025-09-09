@@ -14,8 +14,8 @@ import (
 
 func main() {
 	fmt.Println("CLI Template Setup")
+
 	ctx := context.Background()
-	
 	originURL := detectOriginURL(ctx)
 
 	projectParts := strings.Split(strings.TrimPrefix(originURL, "https://github.com/"), "/")
