@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io/fs"
 	"io/ioutil"
@@ -14,7 +15,8 @@ import (
 func main() {
 	fmt.Println("CLI Template Setup")
 
-	originURL := detectOriginURL()
+	ctx := context.Background()
+	originURL := detectOriginURL(ctx)
 
 	projectParts := strings.Split(strings.TrimPrefix(originURL, "https://github.com/"), "/")
 	repoUser := projectParts[0]
@@ -61,8 +63,8 @@ func walkOverExt(exts string, f func(path string)) {
 	})
 }
 
-func detectOriginURL() (url string) {
-	out, err := exec.Command("git", "remote", "-v").Output()
+func detectOriginURL(ctx context.Context) (url string) {
+	out, err := exec.CommandContext(ctx, "git", "remote", "-v").Output()
 	if err != nil {
 		panic(err)
 	}
