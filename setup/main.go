@@ -64,7 +64,7 @@ func walkOverExt(exts string, f func(path string)) {
 }
 
 func detectOriginURL(ctx context.Context) (url string) {
-	out, err := exec.exec.CommandContext(ctx, "git", "remote", "-v").Output()
+	out, err := exec.CommandContext(ctx, "git", "remote", "-v").Output()
 	if err != nil {
 		panic(err)
 	}
