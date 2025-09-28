@@ -75,19 +75,14 @@ func detectOriginURL(ctx context.Context) (url string) {
 	for _, s := range strings.Split(output, "\n") {
 		s = strings.TrimSpace(strings.TrimPrefix(s, "origin"))
 		if strings.HasPrefix(s, "https://github.com/") && strings.Contains(s, "push") {
-			url = strings.TrimSpace(strings.TrimRight(s, "(push)"))
-
-			return
+			return strings.TrimSpace(strings.TrimRight(s, "(push)"))
 		}
 
 		if strings.HasPrefix(s, "git@github.com:") && strings.Contains(s, "push") {
-			url = strings.TrimSpace(strings.TrimRight(s, "(push)"))
-
-			return
+			return strings.TrimSpace(strings.TrimRight(s, "(push)"))
 		}
 	}
-
-	return
+	return ""
 }
 
 func replaceAllInFile(filepath, search, replace string) {
